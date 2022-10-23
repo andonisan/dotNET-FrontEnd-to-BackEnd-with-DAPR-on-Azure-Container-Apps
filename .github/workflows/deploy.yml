@@ -123,9 +123,9 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: >
-          az containerapp up -n products -image ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.PRODUCTS_IMAGE }}:${{ github.sha }}
-          az containerapp up -n inventory --image ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.INVENTORY_IMAGE }}:${{ github.sha }}
-          az containerapp up -n store --image  ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.STORE_IMAGE }}:${{ github.sha }}
+          az containerapp up --name products -image ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.PRODUCTS_IMAGE }}:${{ github.sha }}
+          az containerapp up --name inventory --image ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.INVENTORY_IMAGE }}:${{ github.sha }}
+          az containerapp up --name store --image  ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.STORE_IMAGE }}:${{ github.sha }}
 
     - name: logout
       run: >
