@@ -125,7 +125,7 @@ jobs:
         inlineScript: >
 
           az containerapp registry set -n products -g ${{ env.RESOURCE_GROUP_NAME }} --server ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io --username ${{ env.RESOURCE_GROUP_NAME }} --password ${{ secrets.ACR_PASSWORD }}
-          az containerapp ip -n products -image ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.PRODUCTS_IMAGE }}:${{ github.sha }}
+          az containerapp up -n products -image ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.PRODUCTS_IMAGE }}:${{ github.sha }}
          
           az containerapp registry set -n inventory -g ${{ env.RESOURCE_GROUP_NAME }} --server ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io --username ${{ env.RESOURCE_GROUP_NAME }} --password ${{ secrets.ACR_PASSWORD }}
           az containerapp up -n inventory --image ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.INVENTORY_IMAGE }}:${{ github.sha }}
