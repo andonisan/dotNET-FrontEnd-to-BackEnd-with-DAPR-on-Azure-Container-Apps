@@ -1,9 +1,7 @@
 name: Build and deploy .NET application to Container App silo
 
 on:
-  push:
-    branches:
-    - deploy
+  workflow_dispatch:
 
 env:
   
